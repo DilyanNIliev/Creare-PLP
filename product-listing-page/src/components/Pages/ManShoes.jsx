@@ -28,7 +28,7 @@ function ManShoes() {
   const manShoesProducts = ProductsData.filter(product => product.category === "Man Shoes");
 
   const handleLoadMoreClick = () => {
-    // Increase the number of products to show by 8 (or less if there are fewer remaining products)
+    // Increase the number of products to show by 4 (or less if there are fewer remaining products)
     setNumProductsToShow(prevNum => prevNum + 4);
   };
 
@@ -163,7 +163,7 @@ function ManShoes() {
             </li>
         ))}
       </ul>
-      {/* this button will show the next 10 products */}
+      {/* this button will show the next 4 products */}
       {numProductsToShow < filteredProducts.length && (
         <button className='loadMore' onClick={handleLoadMoreClick}>Load More</button>
       )}

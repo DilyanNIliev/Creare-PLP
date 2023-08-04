@@ -22,17 +22,13 @@ export function CartProvider({ children }) {
     setCartItems((prevCartItems) => prevCartItems.filter((item) => item.id !== itemId));
   };
 
-  // Clear the cart
-  const clearCart = () => {
-    setCartItems([]);
-  };
 
   // Cart context value
   const cartContextValue = {
     cartItems,
     addToCart,
     removeFromCart,
-    clearCart,
+
   };
 
   return <CartContext.Provider value={cartContextValue}>{children}</CartContext.Provider>;
