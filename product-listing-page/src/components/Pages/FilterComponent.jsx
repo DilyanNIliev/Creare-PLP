@@ -1,5 +1,5 @@
 import React from 'react';
-
+// Contains all the filters by color and by brand
 const FilterComponent = ({ filterTags, handleColorFilterChange, handleBrandFilterChange }) => {
   return (
     <div className="filters">
@@ -103,6 +103,60 @@ const FilterComponent = ({ filterTags, handleColorFilterChange, handleBrandFilte
             onChange={handleBrandFilterChange}
           />
           Reebok
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            value="new balance"
+            checked={filterTags.includes("new balance")}
+            onChange={handleBrandFilterChange}
+          />
+          New Balance
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            value="timberland"
+            checked={filterTags.includes("timberland")}
+            onChange={handleBrandFilterChange}
+          />
+          Timberland
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            value="skechers"
+            checked={filterTags.includes("skechers")}
+            onChange={handleBrandFilterChange}
+          />
+          Skechers
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            value="lacoste"
+            checked={filterTags.includes("lacoste")}
+            onChange={handleBrandFilterChange}
+          />
+          Lacoste
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            value="asics"
+            checked={filterTags.includes("asics")}
+            onChange={handleBrandFilterChange}
+          />
+          Asics
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            value="under"
+            checked={filterTags.includes("under")}
+            onChange={handleBrandFilterChange}
+          />
+          Under Armor
         </label>
     </div>
   );

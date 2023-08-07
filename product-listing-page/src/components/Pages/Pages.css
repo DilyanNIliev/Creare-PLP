@@ -5,14 +5,12 @@ button {
     box-sizing: border-box;
     border-radius: 5px;
 }
-
 button:hover {
     border: 2px solid #2de0bc;
     color: #2de0bc;
     background: transparent;
     transition: .4s;
 }
-
 .productName {
     margin-top: 150px;
     text-align: center;
@@ -38,6 +36,7 @@ ul.productBox:hover {
 }
 .productBox img {
     width: 400px;
+    height: 400px;
     border-radius: 10px;
 }
 .sortSelect select {
@@ -93,7 +92,7 @@ footer:before {
     justify-content: space-between;
     max-width: 1180px;
     margin: 0 auto;
-   ;
+    ;
 }
 .footerContent ul li {
     margin-top: 10px;
@@ -103,7 +102,6 @@ footer:before {
     margin: 20px 0;
     text-align: center;
 }
-
 .logo {
     position: relative;
     top: 20px;
@@ -141,17 +139,14 @@ nav ul li a:hover {
     color: #2de0bc85;
     transition: .2s;
 }
-
 nav ul li.active a {
     color: #2de0bc;
 }
-
 .navigation button {
     position: absolute;
     right: 5%;
-    top: 55px
+    top: 55px 
 }
-
 .App {
     max-width: 1180px;
     margin: 0 auto;
@@ -204,7 +199,6 @@ nav ul li.active a {
     background-color: #2de0bc98;
     border-radius: 5px;
 }
-
 .filters h2 {
     font-weight: bold;
     font-size: 26px;
@@ -223,50 +217,38 @@ nav ul li.active a {
     text-align: left;
     margin-left: 20px;
 }
-
-.menuButton { 
+.menuButton {
     visibility: hidden;
 }
-
 .product {
     margin-bottom: 200px;
 }
-
 .product ul li {
     font-size: 20px;
 }
-
 .product ul li:not(:nth-of-type(1)) {
     padding: 5px 10px;
     text-align: left;
 }
-
 .product ul li span {
     text-transform: uppercase;
     font-size: 15px;
     display: block;
 }
-
 .product ul li.cart {
     text-align: center;
-
 }
-
 .product ul li a {
     text-align: center;
     font-size: 15px;
     margin-top: 10px;
 }
-
 .product ul li a:hover {
     color: #2de0bc;
 }
-
-.termAndConditions,
-.privasyAndPolisy {
-    margin-top: 150px
+.termAndConditions, .privasyAndPolisy {
+    margin-top: 150px 
 }
-
 .mobileMenu ul li {
     position: relative;
     top: -100%;
@@ -275,84 +257,66 @@ nav ul li.active a {
     right: 0;
     transition: .5s;
 }
-
 .productDetailContainer .productBox li {
     margin-bottom: 10px;
 }
-
 .cartSummary {
     margin-bottom: 200px;
 }
-
-.menuButton svg,
-.close-button svg { 
+.menuButton svg, .close-button svg {
     font-size: 30px;
 }
-
-
 @media only screen and (max-width: 1250px) {
-
     .product ul li {
         font-size: 15px;
-    }
-
+   }
     .product ul li span {
         display: block;
-    }
-
+   }
     .productContainer {
         padding:20px;
-    }
+   }
     .sortSelect {
         max-width: 900px;
-    }
-
+   }
     .footerContent {
         justify-content: space-evenly;
-    }
+   }
     .App {
         max-width: 1000px;
-    }
-
-     nav ul li a {
+   }
+    nav ul li a {
         font-size: 13px;
-    }
+   }
     .navigation li:last-child {
         margin-right: 20px;
-    }
-
+   }
     .productBox img {
         width: 300px;
+        height: 300px;
         border-radius: 10px;
-    }
-    
-  }
-
-  @media only screen and (max-width: 1100px) {
-  .productBox img {
-    width: 250px;
-    border-radius: 10px;
+   }
 }
-  }
-
-  @media only screen and (max-width: 769px) {
-
+@media only screen and (max-width: 1100px) {
+    .productBox img {
+        width: 250px;
+        height: 250px;
+        border-radius: 10px;
+   }
+}
+@media only screen and (max-width: 769px) {
     .navigation nav ul li {
         visibility: hidden;
-    }
-
+   }
     .productDetailContainer {
         margin-bottom: 200px;
-    }
-
+   }
     .menuButton {
         visibility: visible;
-    }
-
+   }
     .productContainer {
         flex-direction: column;
-    }
-
+   }
     .mobileMenu ul li {
         position: relative;
         top: 0;
@@ -360,8 +324,7 @@ nav ul li.active a {
         bottom: 0;
         right: 0;
         transition: .2s;
-        
-    }
+   }
     .mobileMenu {
         background: #2de0bc;
         z-index: 20;
@@ -371,20 +334,16 @@ nav ul li.active a {
         bottom: 0;
         overflow: hidden;
         width: 80%;
-         
-    }
-
+   }
     .mobileMenu ul {
         width: 300px;
         margin: 50px auto;
         text-align: center;
-    }
-
+   }
     .mobileMenu ul li {
         margin: 15px 0;
         font-size: 20px;
-    }
-    
+   }
     .sortSelect {
         flex-direction: column;
         justify-content: center;
@@ -392,71 +351,58 @@ nav ul li.active a {
         height: 50px;
         justify-content: space-around;
         margin-bottom: 30px;
-
-
-    }
-
+   }
     .footerContent {
         max-width: 800px;
         text-align: center;
-    }
-
+   }
     .sortSelect p {
         margin-bottom: 10px;
-    }
-
+   }
     .sortSelect select {
         width: 300px;
-        /* margin: 0 auto; */
-    }
+       /* margin: 0 auto;
+        */
+   }
     .productsAndFilter {
         flex-direction: column;
         align-items: center;
-}
+   }
     .productName ul {
         flex-direction: column;
         gap: 10px;
-    }
-
+   }
     .productBox img {
         width: 500px;
+        height: 500px;
         border-radius: 10px;
-    }
-
-    
+   }
     .footerContent {
         flex-direction: column;
         align-items: center;
-    }
-
+   }
     nav ul li a {
         font-size: 13px;
-    }
-
+   }
     .pages {
         display: none;
-    }
-    
+   }
 }
-
 @media only screen and (max-width: 426px) {
-    
-
     .loadMore {
-        margin-bottom: 300px
-    }
-
+        margin-bottom: 300px 
+   }
     .productBox img {
         width: 250px;
+        height: 250px;
         border-radius: 10px;
-    }
-
+   }
     .logo {
         left: 70px;
-    }
+   }
 }
-
 @media only screen and (max-width: 390px) {
-
-    .navigation button { right:15%;}
+    .navigation button {
+        right:15%;
+   }
 }

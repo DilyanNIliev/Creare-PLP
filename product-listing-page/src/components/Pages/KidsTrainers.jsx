@@ -5,7 +5,7 @@ import { useCart } from './CartContext';
 import { Link } from 'react-router-dom';
 import BurgerButton from './BurgerButton';
 import './Pages.css'
-
+import SortProducts from './SortComponent';
 
 function KidsTrainers() {
   const [numProductsToShow, setNumProductsToShow] = useState(4);
@@ -14,7 +14,7 @@ function KidsTrainers() {
   const [filterTags, setFilterTags] = useState([]);
   const { addToCart } = useCart(); 
   const [showAlert, setShowAlert] = useState(false);
-
+  //  It adds the selected product to the cart and shows an alert message to confirm the addition.
   const handleAddToCart = (product) => {
     addToCart(product);
     setShowAlert(true); // Show the alert
@@ -31,27 +31,27 @@ function KidsTrainers() {
     // Increase the number of products to show by 4 (or less if there are fewer remaining products)
     setNumProductsToShow(prevNum => prevNum + 4);
   };
-
+  // Called when the Brand A-Z option is selected It sets the sorting order to Ascending for brand names.
   const handleSortBrandAscClick = () => {
     setSortOrderPrice('');
     setSortOrderBrand('asc');
   };
-
+// Called when the Brand Z-A option is selected It sets the sorting order to Descending for brand names.
   const handleSortBrandDescClick = () => {
     setSortOrderPrice('');
     setSortOrderBrand('desc');
   };
-
+// Called when the Price Lowest to Highes option is selected It sets the sorting order to Ascending for price.
   const handleSortPriceAscClick = () => {
     setSortOrderBrand('');
     setSortOrderPrice('asc');
   };
-
+// Called when the Price Highest to Lowest option is selected It sets the sorting order to Descending for price.
   const handleSortPriceDescClick = () => {
     setSortOrderBrand('');
     setSortOrderPrice('desc');
   };
-
+//  This function is called when a brand filter checkbox is checked or unchecked. It updates the list of filter tags based on the selected brand or color options.
   const handleColorFilterChange = (event) => {
     const { value, checked } = event.target;
     if (checked) {
@@ -69,7 +69,7 @@ function KidsTrainers() {
       setFilterTags(prevTags => prevTags.filter(tag => tag !== value));
     }
   };
-
+ // This variable holds the list of man trainers products after applying the selected color and brand filters.
   const filteredProducts = KidsTrainersProducts.filter(product => {
     if (filterTags.length === 0) {
       return true; // No filters applied, show all products
@@ -80,7 +80,7 @@ function KidsTrainers() {
     );
   });
 
-  // Sorting products by brand
+  // This variable holds the list of filtered products sorted by brand and price, based on the selected sorting order.
   const sortedProductsByBrandAndPrice = [...filteredProducts].sort((a, b) => {
     const brandFirst = a.brand?.toLowerCase() || ''; // Ensure brand is lowercase or use empty string
     const brandSecond = b.brand?.toLowerCase() || ''; // Ensure brand is lowercase or use empty string
@@ -99,17 +99,20 @@ function KidsTrainers() {
     }
 
   });
-
-  const handleSortSelectChange = (e) => {
-    const selectedOption = e.target.value;
+// Called when the user selects a sorting option from the dropdown. It sets the sorting order based on the selected option.
+  const handleSortSelectChange = (selectedOption) => {
     if (selectedOption === 'brandAsc') {
-      handleSortBrandAscClick();
+      setSortOrderBrand('asc');
+      setSortOrderPrice('');
     } else if (selectedOption === 'brandDesc') {
-      handleSortBrandDescClick();
+      setSortOrderBrand('desc');
+      setSortOrderPrice('');
     } else if (selectedOption === 'priceAsc') {
-      handleSortPriceAscClick();
+      setSortOrderBrand('');
+      setSortOrderPrice('asc');
     } else if (selectedOption === 'priceDesc') {
-      handleSortPriceDescClick();
+      setSortOrderBrand('');
+      setSortOrderPrice('desc');
     }
   };
 
@@ -129,13 +132,7 @@ function KidsTrainers() {
     <div className="sortSelect">
       <h1>Kids Traineds</h1>
         <p>Trainers &#62; {categoryToShow}</p>
-        <select onChange={handleSortSelectChange}>
-            <option value="">Default sort</option>
-            <option value="brandAsc">Brand A-Z</option>
-            <option value="brandDesc">Brand Z-A</option>
-            <option value="priceAsc">Price Lowest to Highest</option>
-            <option value="priceDesc">Price Highest to Lowest</option>
-          </select>
+        <SortProducts onSort={handleSortSelectChange} />
           </div>
           <p className='productCounter'>
           Displaying {Math.min(numProductsToShow, filteredProducts.length)} out of {filteredProducts.length} products
